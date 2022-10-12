@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     bannerAds();
     InterstitialAds();
     RewardAds();
+    AppopenAds();
   }
   @override
   Widget build(BuildContext context) {
@@ -59,6 +60,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               },
               child: Text("RewardAds"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if(AppOpenAd != null) {
+                  appOpenAd!.show();
+                }
+              },
+              child: Text("AppopenAds"),
             ),
           ],
         ),

@@ -3,6 +3,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 BannerAd? bannerAd;
 InterstitialAd? interstitialAd;
 RewardedAd? rewardedAd;
+AppOpenAd? appOpenAd;
 
 void bannerAds() {
   bannerAd = BannerAd(
@@ -36,4 +37,16 @@ void RewardAds() {
         },
         onAdFailedToLoad: (error) {}),
   );
+}
+
+void AppopenAds() {
+  AppOpenAd.load(
+      adUnitId: "ca-app-pub-3940256099942544/3419835294",
+      request: AdRequest(),
+      adLoadCallback: AppOpenAdLoadCallback(
+          onAdLoaded: (ad) {
+            appOpenAd = ad;
+          },
+          onAdFailedToLoad: (error) {}),
+      orientation: AppOpenAd.orientationPortrait);
 }
